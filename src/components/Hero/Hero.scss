@@ -19,7 +19,7 @@
   }
 
   &__aihub {
-    width: 130px;
+    width: 166px;
     margin-bottom: 20px;
 
     @media (max-width: 768px) {
@@ -28,7 +28,7 @@
   }
 
   &__pxcopilot {
-    width: 350px;
+    width: 650px;
     margin-bottom: 30px;
 
     @media (max-width: 768px) {
@@ -37,11 +37,12 @@
   }
 
   &__title {
-    font-size: 3rem;
+    font-size: 5.9rem;
     font-weight: 700;
     line-height: 1.1;
     color: #fff;
     margin-bottom: 50px;
+    text-wrap: balance;
 
     @media (max-width: 768px) {
       font-size: 2rem;
@@ -59,7 +60,6 @@
 
   &__iframe-wrapper {
     width: 100%;
-    max-width: 900px;
     border-radius: 18px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.12);
