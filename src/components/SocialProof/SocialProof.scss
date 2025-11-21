@@ -1,0 +1,32 @@
+.social-proof {
+  width: 100%;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  padding: 80px 0;
+
+  &__container {
+    width: 95%;
+    max-width: 1100px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .social-proof {
+    padding: 40px 0;
+
+    &__image {
+      border-radius: 10px;
+    }
+  }
+}
