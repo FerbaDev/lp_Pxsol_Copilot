@@ -5,6 +5,7 @@ import CostSection from './components/CostSection/CostSection.jsx'
 import SocialProof from './components/SocialProof/SocialProof.jsx'
 import Stream from './components/Stream/Stream.jsx'
 import ExpertSection from './components/ExpertSection/ExpertSection.jsx'
+import ClientImpact from './components/ClientImpact/ClientImpact.jsx'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
       <SocialProof />
       <Stream />
       <ExpertSection />
+      <ClientImpact />
     </>
   )
 }

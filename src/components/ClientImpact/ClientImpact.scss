@@ -1,0 +1,67 @@
+.client-impact {
+  width: 100%;
+  padding: 80px 20px;
+  background: #000;
+  color: #fff;
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+
+    @media (max-width: 900px) {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+
+  /* Text Content */
+  &__content {
+    flex: 1;
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 28px;
+  }
+
+  .highlight {
+    background: #bda6ff;
+    color: #fff;
+    padding: 1px;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+
+  &__message {
+    border-left: 3px solid #bda6ff;
+    padding-left: 20px;
+    margin: 40px 0;
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+  }
+
+  /* Image */
+  &__image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+}
