@@ -13,6 +13,7 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 40px;
+  margin: auto;
 
   @media (max-width: 900px) {
     flex-direction: column;
