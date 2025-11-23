@@ -15,7 +15,9 @@
     text-align: start;
     margin-bottom: 60px;
     line-height: 1.2;
-
+    @media (max-width: 768px) {
+      font-size: clamp(4em, 5vw, 94px);
+    }
     span {
       color: #fff;
     }

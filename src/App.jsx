@@ -6,6 +6,7 @@ import SocialProof from './components/SocialProof/SocialProof.jsx'
 import Stream from './components/Stream/Stream.jsx'
 import ExpertSection from './components/ExpertSection/ExpertSection.jsx'
 import ClientImpact from './components/ClientImpact/ClientImpact.jsx'
+import InterfazFriccion from './components/InterfazFriccion/InterfazFriccion.jsx'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
       <Stream />
       <ExpertSection />
       <ClientImpact />
+      <InterfazFriccion />
     </>
   )
 }
