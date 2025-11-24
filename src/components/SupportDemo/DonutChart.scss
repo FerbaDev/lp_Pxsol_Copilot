@@ -1,0 +1,50 @@
+.donut {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  &__circle {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+
+    background: conic-gradient(
+      #9a6bff calc(var(--percent) * 1%),
+      rgba(255, 255, 255, 0.15) 0
+    );
+
+    &::after {
+      content: "";
+      width: 100px;
+      height: 100px;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    &::before {
+      content: attr(data-percentage) "%";
+      position: absolute;
+      z-index: 2;
+    }
+  }
+
+  &__label {
+    margin-top: 15px;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  &__desc {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 5px;
+  }
+}

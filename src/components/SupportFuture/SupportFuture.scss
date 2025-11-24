@@ -1,0 +1,177 @@
+.future-support {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  padding: 80px 0;
+  color: #fff;
+  position: relative; // Necesario para el overlay
+
+  // Overlay
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55); // Ajustá la opacidad a gusto
+    z-index: 0;
+  }
+
+  // Para que todo el contenido quede arriba del overlay
+  .container,
+  &__wrapper {
+    position: relative;
+    z-index: 2;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  &__title {
+    font-size: clamp(6em, 5vw, 94px);
+    font-weight: 700;
+    line-height: 1.2;
+    background: linear-gradient(90deg, #ff6b3e, #ff47e0, #5e9bff);
+    background-clip: text;
+    color: transparent;
+    text-wrap: balance;
+    @media (max-width: 768px) {
+        font-size: clamp(4em, 5vw, 94px);
+    }
+  }
+
+  &__top-texts {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+
+    @media (max-width: 900px) {
+      flex-direction: column;
+    }
+  }
+
+  &__top-item {
+    flex: 1;
+
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1em;
+      line-height: 1.6;
+    }
+  }
+
+  &__description {
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+  }
+
+  .highlight {
+    color: #FF90A5;
+    font-weight: 500;
+  }
+
+  /* Donuts */
+  &__donuts {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    text-align: center;
+
+    @media (max-width: 900px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .donut {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__circle {
+
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: 700;
+
+  /* Gráfico usando conic-gradient */
+  background: conic-gradient(
+    #9a6bff calc(var(--percent) * 1%),
+    rgba(255, 255, 255, 0.15) 0
+  );
+
+  /* Círculo interior */
+  &::after {
+    content: "";
+    width: 100px;
+    height: 100px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    position: absolute;
+  }
+
+  /* Texto del porcentaje */
+  &::before {
+    content: attr(data-percentage) "%";
+    position: absolute;
+    z-index: 2;
+  }
+
+    }
+
+    &__label {
+      margin-top: 15px;
+      font-weight: 700;
+    }
+
+    &__desc {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin-top: 5px;
+    }
+  }
+
+  &__cta {
+    text-align: center;
+
+    button {
+      background: #fff;
+      color: #000;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.2s;
+
+      &:hover {
+        opacity: 0.9;
+        transform: scale(1.03);
+      }
+    }
+  }
+}

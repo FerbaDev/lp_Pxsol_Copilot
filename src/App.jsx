@@ -7,6 +7,8 @@ import Stream from './components/Stream/Stream.jsx'
 import ExpertSection from './components/ExpertSection/ExpertSection.jsx'
 import ClientImpact from './components/ClientImpact/ClientImpact.jsx'
 import InterfazFriccion from './components/InterfazFriccion/InterfazFriccion.jsx'
+import SupportFuture from './components/SupportFuture/SupportFuture.jsx'
+import SupportDemo from './components/SupportDemo/SupportDemo.jsx'
 
 function App() {
 
@@ -20,6 +22,8 @@ function App() {
       <ExpertSection />
       <ClientImpact />
       <InterfazFriccion />
+      <SupportFuture />
+      <SupportDemo />
     </>
   )
 }
