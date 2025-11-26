@@ -103,9 +103,9 @@ const SupportFuture = () => {
             />
           </div>
 
-          <div className="future-support__cta">
-            <button>Probar ahora</button>
-          </div>
+          <a href="https://drive.google.com/file/d/1dwv6_-eFqlozDTnBD6ru-Czsiml75VV-/view" target="_blank" className="future-support__cta">
+            <button >Probar ahora</button>
+          </a>
 
           <button 
             className={`scroll-top-btn ${showScroll ? 'visible' : ''}`}

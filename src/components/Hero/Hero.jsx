@@ -94,9 +94,9 @@ export default function Hero() {
           ></iframe>
         </div>
 
-        <div className="future-support__cta">
-          <button>Probar ahora</button>
-        </div>
+        <a href="https://drive.google.com/file/d/1dwv6_-eFqlozDTnBD6ru-Czsiml75VV-/view" target="_blank"className="hero__cta">
+            <button >Probar ahora</button>
+        </a>
 
       </div>
     </section>
