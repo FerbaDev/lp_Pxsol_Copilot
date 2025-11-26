@@ -1,9 +1,31 @@
+import { useState, useEffect } from 'react';
 import './SupportFuture.scss';
 import bgImage from '../../assets/bg-image.png';
 import DonutChart from './DonutChart';
 import upArrow from '../../assets/up-arrow.png';
 
 const SupportFuture = () => {
+  const [showScroll, setShowScroll] = useState(false);
+
+  useEffect(() => {
+    const checkScrollTop = () => {
+      if (!showScroll && window.pageYOffset > 900) {
+        setShowScroll(true);
+      } else if (showScroll && window.pageYOffset <= 900) {
+        setShowScroll(false);
+      }
+    };
+
+    window.addEventListener('scroll', checkScrollTop);
+    return () => {
+      window.removeEventListener('scroll', checkScrollTop);
+    };
+  }, [showScroll]);
+
+  const scrollTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <section
       className="future-support"
@@ -62,52 +84,23 @@ const SupportFuture = () => {
           </div>
 
           <div className="future-support__donuts">
-            {/* <div className="donut">
-  <div
-    className="donut__circle"
-    style={{ "--percent": 85 }}
-    data-percentage="85"
-  ></div>
-  <p className="donut__label">Resolución instantánea</p>
-  <span className="donut__desc">Sin crear tickets de soporte</span>
-</div>
-
-<div className="donut">
-  <div
-    className="donut__circle"
-    style={{ "--percent": 100 }}
-    data-percentage="100"
-  ></div>
-  <p className="donut__label">Disponibilidad</p>
-  <span className="donut__desc">24/7 sin esperas ni horarios</span>
-</div>
-
-<div className="donut">
-  <div
-    className="donut__circle"
-    style={{ "--percent": 100 }}  // visual 100%
-    data-percentage="300"        // texto "300%"
-  ></div>
-  <p className="donut__label">Velocidad</p>
-  <span className="donut__desc">Más rápido que soporte tradicional</span>
-</div> */}
             <DonutChart
-          percent={85}
-          label="Resolución instantánea"
-          desc="Sin crear tickets"
-        />
+              percent={85}
+              label="Resolución instantánea"
+              desc="Sin crear tickets"
+            />
 
-        <DonutChart
-          percent={100}
-          label="Disponibilidad"
-          desc="24/7 sin esperas"
-        />
+            <DonutChart
+              percent={100}
+              label="Disponibilidad"
+              desc="24/7 sin esperas"
+            />
 
-        <DonutChart
-          percent={300}
-          label="Velocidad"
-          desc="Más rápido que soporte tradicional"
-        />
+            <DonutChart
+              percent={300}
+              label="Velocidad"
+              desc="Más rápido que soporte tradicional"
+            />
           </div>
 
           <div className="future-support__cta">
@@ -115,10 +108,10 @@ const SupportFuture = () => {
           </div>
 
           <button 
-              className="scroll-top-btn"
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            >
-              <img src={upArrow} alt="Scroll to top" />
+            className={`scroll-top-btn ${showScroll ? 'visible' : ''}`}
+            onClick={scrollTop}
+          >
+            <img src={upArrow} alt="Scroll to top" />
           </button>
 
         </div>
