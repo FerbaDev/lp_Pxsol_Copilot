@@ -1,5 +1,6 @@
 import './SupportFuture.scss';
 import bgImage from '../../assets/bg-image.png';
+import DonutChart from './DonutChart';
 
 const SupportFuture = () => {
   return (
@@ -60,7 +61,7 @@ const SupportFuture = () => {
           </div>
 
           <div className="future-support__donuts">
-            <div className="donut">
+            {/* <div className="donut">
   <div
     className="donut__circle"
     style={{ "--percent": 85 }}
@@ -88,8 +89,24 @@ const SupportFuture = () => {
   ></div>
   <p className="donut__label">Velocidad</p>
   <span className="donut__desc">Más rápido que soporte tradicional</span>
-</div>
+</div> */}
+            <DonutChart
+          percent={85}
+          label="Resolución instantánea"
+          desc="Sin crear tickets"
+        />
 
+        <DonutChart
+          percent={100}
+          label="Disponibilidad"
+          desc="24/7 sin esperas"
+        />
+
+        <DonutChart
+          percent={300}
+          label="Velocidad"
+          desc="Más rápido que soporte tradicional"
+        />
           </div>
 
           <div className="future-support__cta">

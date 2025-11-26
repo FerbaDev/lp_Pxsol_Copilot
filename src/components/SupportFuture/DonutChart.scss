@@ -1,0 +1,74 @@
+.donut {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  &__circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: default;
+
+    background: conic-gradient(
+      #9a6bff calc(var(--percent) * 1%),
+      rgba(255, 255, 255, 0.05) 0
+    );
+
+
+
+    /* mejora clave: animación suave al renderizar */
+    transition: background 1s ease-out;
+
+    /* borde premium + glow */
+    box-shadow: 
+      0 0 20px rgba(154, 107, 255, 0.4),
+      inset 0 0 20px rgba(255, 255, 255, 0.06);
+
+    &::after {
+      content: "";
+      width: 110px;
+      height: 110px;
+      background: rgba(0, 0, 0, 0.45);
+      border-radius: 50%;
+      position: absolute;
+      backdrop-filter: blur(6px);
+    }
+
+    &::before {
+      content: attr(data-percentage) "%";
+      position: absolute;
+      z-index: 2;
+      color: #fff;
+      text-shadow: 0 0 8px rgba(154, 107, 255, 0.8);
+    }
+    &:hover {
+      transform: scale(1.04);
+      transition: transform 0.3s ease-out;
+      box-shadow:
+    0 0 25px rgba(154, 107, 255, 0.6),
+    inset 0 0 25px rgba(255, 255, 255, 0.1);
+}
+
+  }
+
+  &__label {
+    margin-top: 15px;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  &__desc {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 5px;
+    max-width: 160px;
+    line-height: 1.4;
+  }
+}
