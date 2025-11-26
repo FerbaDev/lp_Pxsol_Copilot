@@ -4,7 +4,8 @@
   background-position: center;
   padding: 80px 0;
   color: #fff;
-  position: relative; // Necesario para el overlay
+  position: relative;
+  // Necesario para el overlay
 
   // Overlay
   &::before {
@@ -172,6 +173,34 @@
         opacity: 0.9;
         transform: scale(1.03);
       }
+    }
+  }
+
+  .scroll-top-btn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+
+    img {
+      width: 24px;
+      height: auto;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     }
   }
 }

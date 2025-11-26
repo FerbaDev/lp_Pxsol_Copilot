@@ -1,6 +1,7 @@
 import './SupportFuture.scss';
 import bgImage from '../../assets/bg-image.png';
 import DonutChart from './DonutChart';
+import upArrow from '../../assets/up-arrow.png';
 
 const SupportFuture = () => {
   return (
@@ -112,6 +113,13 @@ const SupportFuture = () => {
           <div className="future-support__cta">
             <button>Probar ahora</button>
           </div>
+
+          <button 
+              className="scroll-top-btn"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
+              <img src={upArrow} alt="Scroll to top" />
+          </button>
 
         </div>
       </div>

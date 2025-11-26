@@ -94,6 +94,10 @@ export default function Hero() {
           ></iframe>
         </div>
 
+        <div className="future-support__cta">
+          <button>Probar ahora</button>
+        </div>
+
       </div>
     </section>
   );
