@@ -31,72 +31,35 @@
 //   );
 // }
 
-
-
 import { useRef, useEffect } from "react";
 import "./Hero.scss";
-
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import aihub from "../../assets/aihub.png";
 import pxcopilot from "../../assets/pxcopilot.png";
 
-gsap.registerPlugin(ScrollTrigger);
-
 export default function Hero() {
-  const aihubRef = useRef(null);
   const copilotRef = useRef(null);
+  const titleRef = useRef(null);
   const iframeRef = useRef(null);
 
-  // Animación de imágenes SOLO cuando cargaron
   useEffect(() => {
-    const elements = [aihubRef.current, copilotRef.current];
-
-    const animate = () => {
-      gsap.from(elements, {
-        opacity: 0,
-        y: 40,
-        duration: 1,
-        ease: "power3.out",
-        stagger: 0.2,
-      });
+    // 👀 Función de animación cuando el elemento entra en pantalla
+    const fadeUp = (entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in-view");
+      }
     };
 
-    // Si ambas imágenes ya cargaron
-    const allLoaded = elements.every((el) => el.complete);
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach(fadeUp),
+      { threshold: 0.2 }
+    );
 
-    if (allLoaded) {
-      animate();
-    } else {
-      // Esperar a que carguen
-      elements.forEach((el) =>
-        el.addEventListener("load", animate, { once: true })
-      );
-    }
+    observer.observe(copilotRef.current);
+    observer.observe(titleRef.current);
+    observer.observe(iframeRef.current);
 
-    return () => {
-      elements.forEach((el) =>
-        el.removeEventListener("load", animate)
-      );
-    };
-  }, []);
-
-  // Animación del iframe
-  useEffect(() => {
-    if (!iframeRef.current) return;
-
-    gsap.from(iframeRef.current, {
-      opacity: 0,
-      y: 60,
-      duration: 1,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: iframeRef.current,
-        start: "top 60%",
-        toggleActions: "play none none reverse",
-      },
-    });
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -104,7 +67,6 @@ export default function Hero() {
       <div className="hero__content">
 
         <img
-          ref={aihubRef}
           src={aihub}
           alt="AI Hub"
           className="hero__aihub"
@@ -114,16 +76,16 @@ export default function Hero() {
           ref={copilotRef}
           src={pxcopilot}
           alt="Pxsol Copilot IA"
-          className="hero__pxcopilot"
+          className="hero__pxcopilot fade-up"
         />
 
-        <h1 className="hero__title">
+        <h1 ref={titleRef} className="hero__title fade-up">
           Tools that make teams <br />
           faster and{" "}
           <span className="highlight">more efficient</span>
         </h1>
 
-        <div className="hero__iframe-wrapper" ref={iframeRef}>
+        <div className="hero__iframe-wrapper fade-up" ref={iframeRef}>
           <iframe
             src="https://demo.arcade.software/Ei3xHBuVRiNVeDohn0pS?embed"
             title="Pxsol Demo"
@@ -136,4 +98,5 @@ export default function Hero() {
     </section>
   );
 }
+
 

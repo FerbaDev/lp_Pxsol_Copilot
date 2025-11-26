@@ -79,4 +79,16 @@
   }
 }
 
+/* 🎬 Animación Fade-Up sin JS */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+}
+
+/* Cuando entra en pantalla */
+.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
 

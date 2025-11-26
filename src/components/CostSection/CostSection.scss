@@ -23,6 +23,8 @@
       background: linear-gradient(90deg, #ff6a33, #ff5db1, #5c8dff);
       background-clip: text;
       color: transparent;
+      animation: gradientMove 6s ease-in-out infinite;
+      background-size: 300% 300%;
     }
 
     @media (max-width: 768px) {
@@ -76,4 +78,39 @@
       }
     }
   }
+}
+
+
+/* Animación */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Estado inicial de cualquier elemento animable */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Estado visible */
+.reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.costo-oculto__stats .stat {
+  transition-delay: 0.2s;
+}
+
+.costo-oculto__stats .stat:nth-child(2) {
+  transition-delay: 0.4s;
 }
