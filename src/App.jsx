@@ -7,7 +7,6 @@ import ExpertSection from './components/ExpertSection/ExpertSection.jsx'
 import ClientImpact from './components/ClientImpact/ClientImpact.jsx'
 import InterfazFriccion from './components/InterfazFriccion/InterfazFriccion.jsx'
 import SupportFuture from './components/SupportFuture/SupportFuture.jsx'
-// import SupportDemo from './components/SupportDemo/SupportDemo.jsx'
 import ScrollReveal from './components/ScrollReveal/ScrollReveal.jsx'
 
 function App() {
@@ -33,9 +32,6 @@ function App() {
         <InterfazFriccion />
       </ScrollReveal>
         <SupportFuture />
-      {/* <ScrollReveal>
-        <SupportDemo />
-      </ScrollReveal> */}
     </>
   )
 }

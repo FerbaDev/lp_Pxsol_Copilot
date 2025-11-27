@@ -1,36 +1,3 @@
-// import "./Hero.scss";
-// import aihub from "../../assets/aihub.png";
-// import pxcopilot from "../../assets/pxcopilot.png";
-
-// export default function Hero() {
-//   return (
-//     <section className="hero">
-//       <div className="hero__content">
-
-//         <img src={aihub} alt="AI Hub" className="hero__aihub" />
-
-//         <img src={pxcopilot} alt="Pxsol Copilot IA" className="hero__pxcopilot" />
-
-//         <h1 className="hero__title">
-//           Tools that make teams <br />
-//           faster and{" "}
-//           <span className="highlight">more efficient</span>
-//         </h1>
-
-//         <div className="hero__iframe-wrapper">
-//           <iframe
-//             src="https://demo.arcade.software/Ei3xHBuVRiNVeDohn0pS?embed"
-//             title="Pxsol Demo"
-//             frameBorder="0"
-//             allowFullScreen
-//           ></iframe>
-//         </div>
-
-//       </div>
-//     </section>
-//   );
-// }
-
 import { useRef, useEffect } from "react";
 import "./Hero.scss";
 
@@ -95,7 +62,7 @@ export default function Hero() {
         </div>
 
         <a href="https://drive.google.com/file/d/1dwv6_-eFqlozDTnBD6ru-Czsiml75VV-/view" target="_blank"className="hero__cta">
-            <button >Probar ahora</button>
+            <button className="glow-btn">Probar ahora</button>
         </a>
 
       </div>

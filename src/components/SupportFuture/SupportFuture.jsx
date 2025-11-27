@@ -104,11 +104,11 @@ const SupportFuture = () => {
           </div>
 
           <a href="https://drive.google.com/file/d/1dwv6_-eFqlozDTnBD6ru-Czsiml75VV-/view" target="_blank" className="future-support__cta">
-            <button >Probar ahora</button>
+            <button className='glow-btn'>Probar ahora</button>
           </a>
 
           <button 
-            className={`scroll-top-btn ${showScroll ? 'visible' : ''}`}
+            className={`scroll-top-btn ${showScroll ? 'visible' : ''}`} 
             onClick={scrollTop}
           >
             <img src={upArrow} alt="Scroll to top" />
